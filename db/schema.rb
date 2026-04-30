@@ -10,8 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 0) do
+ActiveRecord::Schema[8.1].define(version: 2026_04_29_220356) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
+  create_table "addresses", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.string "full"
+    t.string "lat", limit: 32
+    t.string "lng", limit: 32
+    t.datetime "updated_at", null: false
+    t.bigint "weather_id", null: false
+    t.index ["weather_id"], name: "index_addresses_on_weather_id"
+  end
+
+  create_table "weathers", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.jsonb "forecast"
+    t.datetime "updated_at", null: false
+    t.string "zip", limit: 16
+    t.index ["zip"], name: "index_weathers_on_zip"
+  end
+
+  add_foreign_key "addresses", "weathers"
 end
