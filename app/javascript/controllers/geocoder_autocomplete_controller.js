@@ -47,6 +47,10 @@ export default class extends Controller {
     this.lngTarget.value     = properties.lon || "";
     this.zipTarget.value     = properties.postcode || "";
 
-    document.querySelector("#debug").textContent = JSON.stringify(properties, null, 2);
+    // insert inside div id="zip{zip}"
+    // document.getElementById("zipContainer")
+
+    // @debug
+    // document.querySelector("#debug").textContent = JSON.stringify(properties, null, 2);
   }
 }

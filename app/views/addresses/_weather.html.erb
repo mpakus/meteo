@@ -1,0 +1,19 @@
+<div class="p-5 mb-4 bg-body-tertiary rounded-3">
+  <div class="container-fluid py-5">
+    <h1 class="display-5 fw-bold">
+      <%= address.full %>
+    </h1>
+
+    <% if from_cache %>
+      <sup class="badge text-bg-danger">CACHE</sup>
+    <% end %>
+
+    <%- @weather = address.weather.decorate %>
+
+    <div class="col-md-8 fs-4">
+      <p><%= @weather.temperature %>°C</p>
+      <p><%= @weather.state %></p>
+    </div>
+
+  </div>
+</div>

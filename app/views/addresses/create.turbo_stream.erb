@@ -1,0 +1,7 @@
+<turbo-stream action="update" target="weather">
+  <template>
+    <div id="<%= dom_id(@address.weather) %>">
+      <%= render 'addresses/weather', address: @address, from_cache: @from_cache %>
+    </div>
+  </template>
+</turbo-stream>

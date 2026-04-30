@@ -1,4 +1,4 @@
-<%= form_with url: addresses_path, method: :post, local: true do |form| %>
+<%= form_with url: addresses_path, method: :post do |form| %>
   <div class="mb-3">
     <%= form.label :address, "Enter an address", class: "form-label" %>
 
@@ -20,5 +20,4 @@
   <pre id="debug"></pre>
 <% end %>
 
-<div id="addressesContainer">
-</div>
+<div id="weather"></div>
