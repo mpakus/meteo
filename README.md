@@ -1,6 +1,6 @@
 # README
 
-<:github ci widget:>
+![example workflow](https://github.com/mpakus/meteo/actions/workflows/ci.yml/badge.svg)
 
 Live Demo: https://meteo.aomega.co
 
