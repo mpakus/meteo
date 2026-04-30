@@ -20,10 +20,6 @@ class AddressesController < ApplicationController
 
   private
 
-  def address_params
-    params.permit(:address, :lat, :lng, :zip)
-  end
-
   def address_created?
     Address::Create
       .new(params[:address], params[:lat], params[:lng], params[:zip])
