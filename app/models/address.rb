@@ -3,6 +3,7 @@
 class Address < ApplicationRecord
   belongs_to :weather
 
+  validates :full, presence: true
   validates :lat, :lng, presence: true, length: { maximum: 32 }
 end
 

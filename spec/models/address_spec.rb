@@ -6,6 +6,7 @@ RSpec.describe Address, type: :model do
   end
 
   context 'with validations' do
+    it { should validate_presence_of(:full) }
     it { should validate_presence_of(:lat) }
     it { should validate_presence_of(:lng) }
     it { should validate_length_of(:lat).is_at_most(32) }

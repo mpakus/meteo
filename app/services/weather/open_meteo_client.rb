@@ -12,6 +12,9 @@ class Weather::OpenMeteoClient
     @error     = nil
   end
 
+  # Open Meteo API call
+  #
+  # @return [Hash, nil] current weather data or nil if error
   def perform
     case request?
     in { ok: data }
