@@ -3,10 +3,10 @@
 source 'https://rubygems.org'
 
 gem 'bootsnap', require: false
+gem 'httparty'
 gem 'importmap-rails'
 gem 'pg', '~> 1.1'
 gem 'propshaft'
-gem 'httparty'
 gem 'puma', '>= 5.0'
 gem 'rails', '~> 8.1.3'
 gem 'solid_cable'
@@ -14,6 +14,7 @@ gem 'solid_cache'
 gem 'solid_queue'
 gem 'stimulus-rails'
 gem 'turbo-rails'
+gem 'dotenv-rails'
 
 group :development, :test do
   gem 'amazing_print'

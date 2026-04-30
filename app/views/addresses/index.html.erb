@@ -1,0 +1,24 @@
+<%= form_with url: addresses_path, method: :post, local: true do |form| %>
+  <div class="mb-3">
+    <%= form.label :address, "Enter an address", class: "form-label" %>
+
+    <div
+      class="autocomplete-container"
+      data-controller="geocoder-autocomplete"
+      data-geocoder-autocomplete-api-key-value="<%= ENV.fetch('GEOAPIFY_KEY', nil) %>"
+      data-geocoder-autocomplete-country-code-value="us"
+      data-geocoder-autocomplete-limit-value="5"
+    >
+      <%= form.hidden_field :address, data: { geocoder_autocomplete_target: "address" } %>
+      <%= form.hidden_field :lat, data: { geocoder_autocomplete_target: "lat" } %>
+      <%= form.hidden_field :lng, data: { geocoder_autocomplete_target: "lng" } %>
+      <%= form.hidden_field :zip, data: { geocoder_autocomplete_target: "zip" } %>
+    </div>
+  </div>
+  <%= form.submit "Show Weather", class: "btn btn-primary w-100" %>
+
+  <pre id="debug"></pre>
+<% end %>
+
+<div id="addressesContainer">
+</div>
